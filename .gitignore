@@ -1,5 +1,12 @@
 venv/
 ny_taxi_postgres_data/
+
+*.json
 *.csv
 
+# Terraform files
+**.terraform*
+*.tfstate**
+
+# Jupyter Notebook
 .ipynb_checkpoints/

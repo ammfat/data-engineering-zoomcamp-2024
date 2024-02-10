@@ -2,7 +2,7 @@ venv/
 ny_taxi_postgres_data/
 
 *.json
-*.csv
+*.csv**
 
 # Terraform files
 **.terraform*

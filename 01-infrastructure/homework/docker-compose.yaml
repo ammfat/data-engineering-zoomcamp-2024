@@ -1,0 +1,26 @@
+services:
+  pgdatabase:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=ammfat
+      - POSTGRES_PASSWORD=ammfat
+      - POSTGRES_DB=taxi_trips
+    volumes:
+      - "./taxi_trips_postgres_data:/var/lib/postgresql/data:rw"
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-network
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=ammfat@ammfat.com
+      - PGADMIN_DEFAULT_PASSWORD=ammfat
+    ports:
+      - "8080:80"
+    networks:
+      - pg-network
+
+networks:
+  pg-network:
+    driver: bridge
